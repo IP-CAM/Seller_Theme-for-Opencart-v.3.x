@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--
+=========================================================
+* Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+
+
+* Copyright  Creative Tim (http://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+
+
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ title }}</title>
+<base href="{{ base }}" />
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if keywords %}
+<meta name="keywords" content="{{ keywords }}" />
+{% endif %}
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+<link rel="stylesheet" href="catalog/view/theme/sellr/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+<link rel="stylesheet" href="catalog/view/theme/sellr/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="catalog/view/theme/sellr/assets/css/argon.css?v=1.2.0" type="text/css">
+
+<link href="catalog/view/theme/sellr/stylesheet/stylesheet.css" rel="stylesheet">
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+{% for link in links %}
+<link href="{{ link.href }}" rel="{{ link.rel }}" />
+{% endfor %}
+{% for analytic in analytics %}
+{{ analytic }}
+{% endfor %}
+</head>
+<body>
+   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header  align-items-center">
+      {% if logo %}
+        <a class="navbar-brand" href="{{ home }}">
+          <img src="{{ logo }}" class="navbar-brand-img"  title="{{ name }}" alt="{{ name }}">
+        </a>
+        {% endif %}
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        {{menu}}
+        </div>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Main content -->
+  <div class="main-content" id="panel">
+    <!-- Topnav -->
+   <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <header>
+          {{search}}
+          </header>
+          <!-- Navbar links -->
+          <ul class="navbar-nav align-items-center  ml-md-auto ">
+            <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-sm-none">
+              <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+                <i class="ni ni-zoom-split-in"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="ni ni-settings-gear-65"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+                <!-- Dropdown header -->
+                <div class="px-3 py-3">
+                  <h6 class="text-sm text-muted m-0">Options</h6>
+                </div>
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  
+                  <!-- My Account -->
+                  <a href="{{ account }}" class="list-group-item list-group-item-action">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <i class="ni ni-single-02" class="avatar rounded-circle"></i>
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-sm">{{ text_account }}</h4>
+                          </div>
+                           
+                        </div>
+                         
+                      </div>
+                    </div>
+                  </a>
+                 
+                  
+                  <!-- Order History -->
+                  <a href="{{ order }}" class="list-group-item list-group-item-action">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <i class="ni ni-money-coins" class="avatar rounded-circle"></i>
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-sm">{{ text_order }}</h4>
+                          </div>
+                           
+                        </div>
+                         
+                      </div>
+                    </div>
+                  </a>
+                 
+                 
+                  
+                  <!-- Wish list -->
+                  <a href="{{ wishlist }}" class="list-group-item list-group-item-action">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+                        <i class="ni ni-bag-17" class="avatar rounded-circle"></i>
+                      </div>
+                      <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h4 class="mb-0 text-sm">{{ text_wishlist }}</h4>
+                          </div>
+                           
+                        </div>
+                         
+                      </div>
+                    </div>
+                  </a>
+                 
+                  
+           
+                 
+                </div>
+                <!-- View all -->
+                <a href="{{ contact }}" class="dropdown-item text-center text-primary font-weight-bold py-3">
+                <i class="ni ni-chat-round"></i> {{ text_contact }}
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="ni ni-basket"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
+                <div class="row shortcuts px-4">
+                  <a href="{{ wishlist }}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-red">
+                      <i class="ni ni-bag-17"></i>
+                    </span>
+                    <small>{{ text_wishlist }}</small>
+                  </a>
+                  <a href="{{ shopping_cart }}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-orange">
+                      <i class="ni ni-cart"></i>
+                    </span>
+                    <small>{{ text_shopping_cart }}</small>
+                  </a>
+                  <a href="{{ checkout }}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-info">
+                      <i class="ni ni-credit-card"></i>
+                    </span>
+                    <small>{{ text_checkout }}</small>
+                  </a>
+                   
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="catalog/view/theme/sellr/assets/img/theme/team-4.jpg">
+                  </span>
+                  <div class="media-body  ml-2  d-none d-lg-block">
+                    <span class="mb-0 text-sm  font-weight-bold">My Account</span>
+                  </div>
+                </div>
+              </a>
+              <div class="dropdown-menu  dropdown-menu-right ">
+                
+                {% if logged %}
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+                <a href="{{ account }}" class="dropdown-item">
+                  <i class="ni ni-badge"></i>
+                  <span>{{ text_account }}</span>
+                </a>
+                <a href="{{ order }}" class="dropdown-item">
+                  <i class="ni ni-archive-2"></i>
+                  <span>{{ text_order }}</span>
+                </a>
+                
+                <a href="{{ transaction }}" class="dropdown-item">
+                  <i class="ni ni-credit-card"></i>
+                  <span>{{ text_transaction }}</span>
+                </a>
+                
+                <a href="{{ download }}" class="dropdown-item">
+                  <i class="ni ni-cloud-download-95"></i>
+                  <span>{{ text_download }}</span>
+                </a>
+
+                <div class="dropdown-divider"></div>
+                <a href="{{ logout }}" class="dropdown-item">
+                  <i class="ni ni-user-run"></i>
+                  <span>{{ text_logout }}</span>
+                </a>
+                {% else %}
+                <a href="{{ register }}" class="dropdown-item">
+                  <i class="ni ni-settings-gear-65"></i>
+                  <span>{{ text_register }}</span>
+                </a>
+                <a href="{{ login }}" class="dropdown-item">
+                  <i class="ni ni-calendar-grid-58"></i>
+                  <span>{{ text_login }}</span>
+                </a>
+               
+                
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <!-- Header -->
+
+<div class="header bg-primary pb-6">
+      <div class="container-fluid">
+      
+        <div class="header-body">
+        
+          <div class="row align-items-center py-4">
+             <div class="col-lg-6 col-7">
+              
+               
+            </div>
+            <div class="col-lg-6 col-6 text-right">
+              <div class="col-sm-6">{{ cart }}</div>
+             
+            </div>
+            
+          </div>
+          <!-- Card stats -->
+           
+        </div>
+      </div>
+    </div>
