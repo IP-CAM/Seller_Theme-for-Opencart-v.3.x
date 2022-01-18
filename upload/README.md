@@ -1,6 +1,6 @@
 ## Sellr Free Responsive Theme for OpenCart
 
-![alt text](/catalog/view/theme/sellr/image/sellr.png)
+![alt text](/upload/catalog/view/theme/sellr/image/sellr.png)
 
 Modern OpenCart theme. Easy to install and use. 
 
